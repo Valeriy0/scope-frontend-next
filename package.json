@@ -1,0 +1,86 @@
+{
+  "name": "frontend-template",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": "please-use-yarn",
+    "yarn": ">=1.22.0"
+  },
+  "packageManager": "yarn@1.22.22",
+  "scripts": {
+    "preinstall": "node scripts/check-yarn.js",
+    "predev": "node scripts/check-yarn.js",
+    "prebuild": "node scripts/check-yarn.js",
+    "prestart": "node scripts/check-yarn.js",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "lint:custom": "eslint \"src/**/*.{js,jsx}\" \"pages/**/*.{js,jsx}\"",
+    "lint:custom:fix": "eslint \"src/**/*.{js,jsx}\" \"pages/**/*.{js,jsx}\" --fix",
+    "lint:all": "eslint \"src/**/*.{js,jsx}\" \"pages/**/*.{js,jsx}\" \"scripts/**/*.js\" \"*.config.{js,mjs}\"",
+    "lint:all:fix": "eslint \"src/**/*.{js,jsx}\" \"pages/**/*.{js,jsx}\" \"scripts/**/*.js\" \"*.config.{js,mjs}\" --fix",
+    "format": "prettier --write \"**/*.{js,jsx,json,md,css,scss}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,json,md,css,scss}\"",
+    "check": "yarn lint:all && yarn format:check",
+    "fix": "yarn lint:all:fix && yarn format",
+    "help": "echo '📦 Используйте ТОЛЬКО yarn для работы с проектом!' && echo '' && echo 'Доступные команды:' && echo '  yarn install    - установка зависимостей' && echo '  yarn dev        - запуск в режиме разработки' && echo '  yarn build      - сборка проекта' && echo '  yarn start      - запуск продакшн сборки' && echo '  yarn check      - проверка кода' && echo '  yarn fix        - исправление кода' && echo '' && echo '❌ npm запрещен в этом проекте!'"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.5",
+    "@reduxjs/toolkit": "^2.3.0",
+    "@reown/appkit": "^1.7.5",
+    "@reown/appkit-adapter-solana": "^1.7.5",
+    "@solana/codecs": "^2.1.1",
+    "@solana/wallet-adapter-wallets": "^0.19.36",
+    "@solana/web3.js": "^1.98.2",
+    "axios": "^1.9.0",
+    "copy-to-clipboard": "^3.3.3",
+    "next": "15.3.5",
+    "qs": "^6.14.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.5.2",
+    "react-redux": "^9.1.2",
+    "tailwind-scrollbar-hide": "^4.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9.30.1",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "autoprefixer": "^10.4.17",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.5",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "lint-staged": "^16.1.2",
+    "postcss": "^8.4.35",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^3.4.1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "scripts/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.config.{js,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,scss}": [
+      "prettier --write"
+    ]
+  }
+}
