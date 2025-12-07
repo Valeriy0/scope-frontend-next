@@ -9,10 +9,6 @@
   },
   "packageManager": "yarn@1.22.22",
   "scripts": {
-    "preinstall": "node scripts/check-yarn.js",
-    "predev": "node scripts/check-yarn.js",
-    "prebuild": "node scripts/check-yarn.js",
-    "prestart": "node scripts/check-yarn.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
